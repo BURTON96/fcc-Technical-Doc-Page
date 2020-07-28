@@ -10,10 +10,15 @@ section{
     margin: auto;
     padding: auto;
 }
-.snippet{
-  background-color: 343D46;
-  padding: auto;
-  margin: auto;
-  height: 100%;
-  width: 100%;
+pre{
+    color: hsl(209, 13%, 35%);
+    background-color: rgba(192, 197, 206, 0.2);
+    padding: 2px;
+  }
+b{
+  color: #343d46;
 }
+a{
+  color: #4f5b66;
+}
+
