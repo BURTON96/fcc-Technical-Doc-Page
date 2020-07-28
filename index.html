@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html> 
     <head>
@@ -12,46 +13,99 @@
         <main id="main-doc">
             <section class="main-section">
                 <header>
-                <h2>About Michael Hartl</h2></header>
-                <p>Michael Hartl is the principal author at Learn Enough. Previously 
-                    a physic instructor at Caltech, he received a Lifetime Achievement Award for an Excellence in Teaching.</p>
-                <p>Without the work of Mr Hartl and the Learn Enough triolgy my venture into becoming a Developer and understanding of the necessary componenets would be 
-                    non existent.</p>
-                <p><i>Information outlined below belongs to Michael Hartl and Learn Enough and is used for the express purpose of creating a Technical Document 
-                    Page.</i>
-                </p>
-            </section> 
-            <section class="main-section">
-                <header><h2>Chapter 1 - Getting Started</h2></header>
-                <p>Learn Enough Git to Be Dangerous is the final installment in a trilogy of tutorials on Developer Fundamentals designed to 
-                teach three skills essential for software developers and those who work with them.Its only prerequisites are the first two tutorials
-                 in the trilogy, Learn Enough Command Line to Be Dangerous (covering the Unix command line) and Learn Enough Text Editor to Be Dangerous (covering text editors).
-                </p>
-                <p>
-                This tutorial covers a third essential skill: version control. As with its two predecessors, Learn Enough Git to Be Dangerous
-                 doesn’t even assume you’re familiar with the category of application, so if you’re unsure about what “version control” is, you’re in the
-                  right place. Even if you are already familiar with the subject, it’s likely you’ll still learn a lot from this tutorial. Either way, learning the material in Learn 
-                  Enough Git to Be Dangerous prepares you for the other Learn Enough tutorials while enabling an astonishing variety of applications—including a special surprise bonus at the end (Box 1.1).</p>
-                  <div class="text-box">
-                      <h3 class="sub-header">Box 1.1. Real artists ship</h3>
-                      <p>As legendary Apple cofounder Steve Jobs once said: Real artists ship. What he meant was that, as tempting as it is to privately polish in perpetuity, makers must ship their work—that is, actually 
-                          finish it and get it out into the world. This can be scary, because shipping means exposing your work not only to fans but also to critics. “What if people don’t like what I’ve made?”
-                          <i>Real artists ship.</i></p>
-                        <p>It’s important to understand that shipping is a separate skill from making. Many makers get good at making things but never learn to ship. To keep this from happening to us, starting in Learn Enough Git to
-                         Be Dangerous we’re going to ship at least one thing in every Learn Enough tutorial. In fact, in this tutorial we’ll actually ship two things—a public
-                          Git repository and a surprise bonus that will give you bragging rights with all of your friends.</p>
-                  </div>
+                <h1>Introduction to Git</h1></header>
+                <p>Git is an incredibly popular version control stystem and is one of the most used. Git is an actively maintaine open source project developed in 2005 by Linus Torvald, the creator of Linux operating system kernel.</p>
+              <p> GitHub, which is commonly confused for Git, is a service that allows us to upload code projects to Git and manage our code in a easy to use web interface.</p> 
 
+              <p>Below you will find outlined details on how to configure both Git and GitHub to your personal device. I will also outline some quick commands you can perform from the command line to aid you in any projects you may be working on.</p>
+                </p>
+          
+ 
+</section> 
+      
+            <section class="main-section">
+                <header><h2>Step 1: Install Git for MacOS</h2></header>
+              <h3>Step 1.0: Install Homebrew</h3> 
+              <p>Before you do anything you'll need to install Homebrew. Copy and paste the following line into your terminal. <b>It is incredibly important this is exact </b>
+                <pre>
+                <code class="snippet">
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+ </code>
+                </pre>
+              <h3> Step 1.1: Update Git</h3>
+              <p>MacOS already comes with a verision of Git, but you should update to the latest version. Type the following into the termianl</p>
+              <pre>
+                <code>
+    brew install git</code>
+              </pre>
+              <p>This will install the latest verision of Git.</p>
             </section>
+      
+      <section class="main-section">
+        <header><h2>Step 2: Configure Git and Github</h2></header>
+        <h3>Step 2.1: Setup Git</h3>
+        <p>For Git to be able to do it's magic and work properly, we need to let it know who we are so that it can link a local Git user to GitHub. When working on a team, this allows for fellow developers to see what you have committed and who commited each line of code.</p>
+        <p>The commands below will configure Git. Be sure to edit to the correct information according.</p>
+          <pre>
+          <code>
+    git config --global user.name "Your Name"
+    git config --global user.email "yourname@example.com"
+          </code>
+          </pre>
+        <p>To enable a colourful output with git, type the following into your command line</p>
+        <pre>
+        <code>
+    git config --global color.ui auto</code>
+        </pre>
+        <p>To verify things are working properly, enter these commands and verify that the outputs matches your name and email address</p>
+        <pre>
+        <code>
+    git config --get user.name
+    git config --get user.email
+        </code>
+        </pre>
+        <h3>Step 2.2: Create a GitHub Account and sign in</h3>
+        <p>If you haven't already created an account, you can do so by following the account set-up link <a href="https://github.com/join" target="_blank">here</a>. <i>You don't have to use the same email address you used before, but it might be good idea to use the same one to keep things simple</i>.
+          <h3>Step 2.3: Create an SSH Key</h3>
+            <p>An SSH key is a cryptographically secure identifier. It's like a really long password used to identify your machine. GitHub uses SSH keys to allow you to upload to your repository without having to type in your username and password everytime.</p>
+            <p>First, we need to see if you have an SSH key already installed. Type the following into the terminal.</p>
+            <pre>
+            <code>
+    ls ~/.ssh/id_rsa.pub
+            </code>
+            </pre>
+        <p>If a message appears in the console containing the message "No such file or directory", then you do not yyet have an SSH key, and you will need to create one. If no message has appeared in the console output, you already have a key and can proceed to step 2.4.</p>
         
-        
-        
-        
-        
-        
-        
-        
+        <p>To create a new SSH key, run the following command inside your terminal. The <b><i>-C</i></b> flag followed by your email address ensure that GitHub knows who you are.</p>
+        <p><b><i>Note:</i></b> The angle brackets (< >) in the code snippet below indicate that should replace the part of the command with the appropriate information. <b>DO NOT INCLUDE THE BRACKETS THEMSELVES IN YOUR COMMAND</b>. 
+          <pre>
+          <code>
+    ssh-keygen -C <youremail>
+          </code>
+          </pre>
+          <ul>
+          <li>When it prompts you for a location to save the generated key just press <b>Enter</b>.</li>
+          <li>Next, it will ask you for a password; enter one if you wish, but it's not required.</li>
+          <h3>Step 2.4: Link your SSH Key with GitHub</h3>
+          <p>Next, you need to make GitHub aware what your SSH key is so that you can push your code without typing in a password everytime.</p>
+          
+          <p>First, you'll meed to open up <a href="http://github.com/" target="_blank">GitHub</a> and click on your profile in the top right corner. Then, click on <b>Settings</b> in the drop-down menu.</p>
+          <p>Next, on the left-hand side, click SSH and GPG keys. Then, click the green button in the top right corner that says <b>New SSH Key</b>. Name your key something that is descriptive enough for you to remember where it came from, such as, "John-Smiths-MacBookPro". Leave this window open while you do the next steps. </p>
+          <p>Now you need to copy your public SSH key. To do this, we're going to use a command called <i>cat</i> to read the file to the console. (Note that the .pub file extension is important in this case.)
+          <pre>
+          <code>
+    cat ~/.ssh/id_rsa.pub
+          </code>
+          </pre>
+          <p>Once this is done you should see an output appear, which starts with ssh-rsa and ends with your email address. Highlight and copy the output using <b>CMD+C</b>.</p>
+          <p>Now, open up that window in GitHub in your browser from earlier and paste the key you copied into the key field. Then, click <b>Add SSH key</b>. Congratulations you're done! Yoou've successfully added your SSH key!</p>
+          <h3>Step 2.5: Testing your key</h3>
+          <p>Follow the directions in <a href="https://help.github.com/en/articles/testing-your-ssh-connection" target="_blank">this article from GitHub</a> to verify your SSH connection. If the output doesn't correctly match up, then go through these steps again.</p>
+        </section>
+        <section id="main-section">
+        <h1>Step 3: You're done!</h1>
+        <p>If you felt like you were in way over your head, and you didn't understand what we were doing there, that is 100% normal! If you didn't, then that's great! This guide is to give people who are starting out on their developer career a quick and easy guide to set-up on Git and GitHub and to start off with some basic commands they will use day-to-day when using the two systems. More of this content will continue below.</p>
+        </section>
         </main> 
-<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     </body>
 </html>
