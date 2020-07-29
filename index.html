@@ -11,7 +11,7 @@
     </head>
     <body>
         <main id="main-doc">
-            <section class="main-section">
+            <section id="Introduction_to_Git" class="main-section">
                 <header>
                 <h1>Introduction to Git</h1></header>
                 <p>Git is an incredibly popular version control stystem and is one of the most used. Git is an actively maintaine open source project developed in 2005 by Linus Torvald, the creator of Linux operating system kernel.</p>
@@ -23,7 +23,7 @@
  
 </section> 
       
-            <section class="main-section">
+            <section id="Step_1-:_Install_Git_for_MacOS" class="main-section">
                 <header><h2>Step 1: Install Git for MacOS</h2></header>
               <h3>Step 1.0: Install Homebrew</h3> 
               <p>Before you do anything you'll need to install Homebrew. Copy and paste the following line into your terminal. <b>It is incredibly important this is exact </b>
@@ -41,7 +41,7 @@
               <p>This will install the latest verision of Git.</p>
             </section>
       
-      <section class="main-section">
+      <section id="Step_2_:_Configure_Git_and_Github" class="main-section">
         <header><h2>Step 2: Configure Git and Github</h2></header>
         <h3>Step 2.1: Setup Git</h3>
         <p>For Git to be able to do it's magic and work properly, we need to let it know who we are so that it can link a local Git user to GitHub. When working on a team, this allows for fellow developers to see what you have committed and who commited each line of code.</p>
@@ -80,13 +80,12 @@
         <p><b><i>Note:</i></b> The angle brackets (< >) in the code snippet below indicate that should replace the part of the command with the appropriate information. <b>DO NOT INCLUDE THE BRACKETS THEMSELVES IN YOUR COMMAND</b>. 
           <pre>
           <code>
-    ssh-keygen -C <youremail>
+    ssh-keygen -C [youremail]
           </code>
           </pre>
           <ul>
           <li>When it prompts you for a location to save the generated key just press <b>Enter</b>.</li>
-          <li>Next, it will ask you for a password; enter one if you wish, but it's not required.</li>
-          </ul>
+          <li>Next, it will ask you for a password; enter one if you wish, but it's not required.</li></ul>
           <h3>Step 2.4: Link your SSH Key with GitHub</h3>
           <p>Next, you need to make GitHub aware what your SSH key is so that you can push your code without typing in a password everytime.</p>
           
@@ -103,10 +102,120 @@
           <h3>Step 2.5: Testing your key</h3>
           <p>Follow the directions in <a href="https://help.github.com/en/articles/testing-your-ssh-connection" target="_blank">this article from GitHub</a> to verify your SSH connection. If the output doesn't correctly match up, then go through these steps again.</p>
         </section>
-        <section id="main-section">
-        <h1>Step 3: You're done!</h1>
+        <section id="Step_3_:_You_'_re_done_!" class="main-section">
+        <header><h1>Step 3: You're done!</h1><header>
         <p>If you felt like you were in way over your head, and you didn't understand what we were doing there, that is 100% normal! If you didn't, then that's great! This guide is to give people who are starting out on their developer career a quick and easy guide to set-up on Git and GitHub and to start off with some basic commands they will use day-to-day when using the two systems. More of this content will continue below.</p>
+        <p>For more information regarding the differences of Git and GitHub <a href="https://blog.red-badger.com/2016/11/29/gitgithub-in-plain-english" target="_blank">visit this article</a>.</p>
         </section>
+        <section id="Git_Cheat_Sheet" class="main-section">
+          <header><h1>Git Cheat Sheet</h1></header> 
+        <h3>Creating Repositories</h3> 
+        <p>When starting a new repository, you only need to do it once; either locally, then push to GitHub, or by cloning an exisiting repository.</p>
+        <pre>
+        <code>
+  $ git init
+        </code>
+  Turns an existing directory into a git repository
+        </pre>
+        <pre>
+        <code>
+  $ git clone [ url ]
+        </code>
+  Clones (downloads) a repository that already exist on GitHub.
+  This includes all the files, branches, and commits. 
+        </pre>
+        <h3>Branches</h3>
+        <p>Branches are an important part of working with Git. Any commit you make will be made on the branch you're currently working "checked out". Use <code>$ git status</code> to see which branch that is.</p>
+        <pre>
+        <code>
+  $ git branch [branch-name]
+        </code>
+  creates a new branch
+        </pre>
+        <pre>
+        <code>
+  $ git checkout [branch-name]
+        </code>
+  Switches to the specidied branch and updates the working directory
+        </pre>
+        <p>At this point you can work on your project without risk of disrupting your already working code. When you're happy with the changes you've made you can move onto the next command.</p>
+        <p><i>Hint: This is a great way to experiment with new code or feature before merging with your master branch</i></p>
+        <pre>
+        <code>
+ $ git merge [branch]
+        </code>
+  Combines the specified branch's history into the current branch.
+        </pre>
+        <p>If you've made an error and merged your branch too soon, or with faulty code you can always revert to an old version. That's the beauty of git!</p>
+        <pre>
+        <code>
+  $ git branch -d [branch-name]
+        </code>
+  Deletes the specified branch
+        </pre>
+          <h3>Synchronise Changes</h3>
+          <p>Synchronise your local repository with the remote repository on GitHub.</p>
+          <pre>
+          <code>
+    $ git fetch
+          </code>
+    Downloads all history from the remote tracking branches
+          </pre>
+          <pre>
+          <code>
+    $ git merge
+          </code>
+    Combines the remote tracking branch into the current local branch
+          </pre>
+          <pre>
+          <code>
+    $ git push
+          </code>
+    Uploads all local branch commits to GitHub
+          </pre>
+          <pre>
+          <code>
+    $ git pull
+          </code>
+    Updates your current local working branch with all new commits
+    from the corresponding remote branch on GitHub. 
+          </pre>
+          <p><code>git pull</code> is a comination of <code>git fetch</code> and <code>git merge</code>.</p>
+          <h3>Make Changes</h3>
+          <p>Browse and inspect the evolution of project files</p>
+          <pre>
+          <code>
+    $ git log
+          </code>
+    Lists verision history for the current branch
+          </pre>
+          <pre>
+          <code>
+    $ git add [file]
+          </code>
+    Snapshots the file in preparation for versioning
+          </pre>
+          <pre>
+          <code>
+    $ git commit -m "[descriptive message]"
+          </code>
+    Records file snapshots permanently in version history.
+          </pre>
+          <p><i>Tip: Keep your commit messages concise and relevant to the changes you made</i></p>
+        </section>
+          <section class="main-section">
+            <header><h1>Review of what we've learnt</h1></header>
+            <p>So, we've covered a lot here - infact we've done the following;</p>
+            <ul>
+              <li>Installed Git in the command line</li>
+              <li>Created a GitHub Account</li>
+              <li>Learnt about verison control and it's importance <a href="https://blog.red-badger.com/2016/11/29/gitgithub-in-plain-english" target="blank">here</a>.</li>
+              <li>Learnt how to create a repository</li>
+              <li>How to create and work from a branch</li>
+              <li>Synchronise and changes we made</li>
+              <li>Finally, add and commit those changes</li>
+            </ul>
+          </section>
         </main> 
     </body>
 </html>
