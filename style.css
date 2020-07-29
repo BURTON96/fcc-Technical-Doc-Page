@@ -10,15 +10,14 @@ section{
     margin: auto;
     padding: auto;
 }
-pre{
-    color: hsl(209, 13%, 35%);
-    background-color: rgba(192, 197, 206, 0.2);
-    padding: 2px;
-  }
 b{
   color: #343d46;
 }
 a{
   color: #4f5b66;
 }
-
+pre{
+  color:rgb(192, 197, 206); ;
+  background-color: hsl(209, 13%, 20%);
+  padding: 2px;
+}
