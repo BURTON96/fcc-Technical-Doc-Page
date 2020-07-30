@@ -8,12 +8,23 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap" rel="stylesheet">
     </head>
     <body>
+      <nav id="navbar">
+        <header class="nav-header">Beginners Guide to Git and GitHub</header>
+        <ul>
+        <a class="nav-link" href="#Introduction_to_Git"><li class="nav-items">Introduction to Git</li></a> 
+        <a class="nav-link" href="#Step_1_Install_Git_for_MacOS"><li class="nav-items">Step 1 Install Git for MacOS</li></a>
+        <a class="nav-link" href="#Step_2_Configure_Git_and_Github"><li class="nav-items">Step 2 Configure Git and Github</li></a>
+          <a class="nav-link" href="#Step_3_You_are_done"><li class="nav-items">Step 3 you are done</li></a>
+          <a class="nav-link" href="#Git_Cheat_Sheet"><li class="nav-items">Git Cheat Sheet</li></a>
+        <a class="nav-link" href="#Review_of_what_we_just_learnt"><li class="nav-items">Review of what we just learnt</li></a>
+        </ul>
+      </nav>
         <main id="main-doc">
-            <section id="Introduction_to_Git" class="main-section">
-                <header>
-                <h1>Introduction to Git</h1></header>
+            <section class="main-section" id="Introduction_to_Git" >
+                <header>Introduction to Git</header>
                 <p>Git is an incredibly popular version control stystem and is one of the most used. Git is an actively maintaine open source project developed in 2005 by Linus Torvald, the creator of Linux operating system kernel.</p>
               <p> GitHub, which is commonly confused for Git, is a service that allows us to upload code projects to Git and manage our code in a easy to use web interface.</p> 
 
@@ -23,8 +34,8 @@
  
 </section> 
       
-            <section id="Step_1-:_Install_Git_for_MacOS" class="main-section">
-                <header><h2>Step 1: Install Git for MacOS</h2></header>
+            <section class="main-section" id="Step_1_Install_Git_for_MacOS">
+                <header>Step 1 Install Git for MacOS</header>
               <h3>Step 1.0: Install Homebrew</h3> 
               <p>Before you do anything you'll need to install Homebrew. Copy and paste the following line into your terminal. <b>It is incredibly important this is exact </b>
                 <pre>
@@ -41,8 +52,8 @@
               <p>This will install the latest verision of Git.</p>
             </section>
       
-      <section id="Step_2_:_Configure_Git_and_Github" class="main-section">
-        <header><h2>Step 2: Configure Git and Github</h2></header>
+      <section class="main-section" id="Step_2_Configure_Git_and_Github">
+        <header>Step 2 Configure Git and Github</header>
         <h3>Step 2.1: Setup Git</h3>
         <p>For Git to be able to do it's magic and work properly, we need to let it know who we are so that it can link a local Git user to GitHub. When working on a team, this allows for fellow developers to see what you have committed and who commited each line of code.</p>
         <p>The commands below will configure Git. Be sure to edit to the correct information according.</p>
@@ -102,13 +113,13 @@
           <h3>Step 2.5: Testing your key</h3>
           <p>Follow the directions in <a href="https://help.github.com/en/articles/testing-your-ssh-connection" target="_blank">this article from GitHub</a> to verify your SSH connection. If the output doesn't correctly match up, then go through these steps again.</p>
         </section>
-        <section id="Step_3_:_You_'_re_done_!" class="main-section">
-        <header><h1>Step 3: You're done!</h1><header>
+        <section  class="main-section" id="Step_3_You_are_done">
+        <header>Step 3 You are done</header>
         <p>If you felt like you were in way over your head, and you didn't understand what we were doing there, that is 100% normal! If you didn't, then that's great! This guide is to give people who are starting out on their developer career a quick and easy guide to set-up on Git and GitHub and to start off with some basic commands they will use day-to-day when using the two systems. More of this content will continue below.</p>
         <p>For more information regarding the differences of Git and GitHub <a href="https://blog.red-badger.com/2016/11/29/gitgithub-in-plain-english" target="_blank">visit this article</a>.</p>
         </section>
-        <section id="Git_Cheat_Sheet" class="main-section">
-          <header><h1>Git Cheat Sheet</h1></header> 
+        <section  class="main-section" id="Git_Cheat_Sheet">
+          <header>Git Cheat Sheet</header> 
         <h3>Creating Repositories</h3> 
         <p>When starting a new repository, you only need to do it once; either locally, then push to GitHub, or by cloning an exisiting repository.</p>
         <pre>
@@ -203,8 +214,8 @@
           </pre>
           <p><i>Tip: Keep your commit messages concise and relevant to the changes you made</i></p>
         </section>
-          <section class="main-section">
-            <header><h1>Review of what we've learnt</h1></header>
+          <section class="main-section" id="Review_of_what_we_just_learnt">
+            <header>Review of what we just learnt</header>
             <p>So, we've covered a lot here - infact we've done the following;</p>
             <ul>
               <li>Installed Git in the command line</li>
@@ -218,4 +229,5 @@
           </section>
         </main> 
     </body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </html>
