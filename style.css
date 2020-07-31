@@ -16,6 +16,10 @@ html{
   h3{
     font-size: 20px;
   }
+  h5{ 
+    font-size: 15px;
+    padding-top: 15px;
+  }
   nav{
     position: absolute;
     text-align: left;
@@ -47,13 +51,28 @@ html{
     color: #4f5b66;
   }
   pre{
-    color:rgb(192, 197, 206); ;
+    color:rgb(192, 197, 206);
     background-color: hsl(209, 13%, 20%);
-    padding: 2px;
+    overflow-x: scroll;
+  }
+  code{
+    margin: auto;
+    padding: auto;
+  }
+  footer{
+    width: 100%;
+    height:150px;
+    background-color: hsl(209, 13%, 20%);
+    color: rgb(192, 197, 206);
+    padding: auto;
+    margin: auto;
+    text-align: center;
   }
   @media only screen and (max-width: 600px) {
     nav{
       position: static;
+      width: 100%;
+      padding-bottom: 20px;
     }
     main{
       position: static;
@@ -64,4 +83,3 @@ html{
       width: 85%;
     }
   }
-  
