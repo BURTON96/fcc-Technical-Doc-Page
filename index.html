@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html> 
     <head>
@@ -15,7 +14,7 @@
         <header class="nav-header">Beginners Guide to Git and GitHub</header>
         <ul>
         <a class="nav-link" href="#Introduction_to_Git"><li class="nav-items">Introduction to Git</li></a> 
-        <a class="nav-link" href="#Step_1_Install_Git_for_MacOS"><li class="nav-items">Step 1 Install Git for MacOS</li></a>
+        <a class="nav-link" href="#Step_1_Install_Git"><li class="nav-items">Step 1 Install Git</li></a>
         <a class="nav-link" href="#Step_2_Configure_Git_and_Github"><li class="nav-items">Step 2 Configure Git and Github</li></a>
           <a class="nav-link" href="#Step_3_You_are_done"><li class="nav-items">Step 3 you are done</li></a>
           <a class="nav-link" href="#Git_Cheat_Sheet"><li class="nav-items">Git Cheat Sheet</li></a>
@@ -34,9 +33,9 @@
  
 </section> 
       
-            <section class="main-section" id="Step_1_Install_Git_for_MacOS">
-                <header>Step 1 Install Git for MacOS</header>
-              <h3>Step 1.0: Install Homebrew</h3> 
+            <section class="main-section" id="Step_1_Install_Git">
+                <header>Step 1 Install Git</header>
+              <h3>MacOS Users - Step 1.0: Install Homebrew</h3> 
               <p>Before you do anything you'll need to install Homebrew. Copy and paste the following line into your terminal. <b>It is incredibly important this is exact </b>
                 <pre>
                 <code class="snippet">
@@ -50,8 +49,24 @@
     brew install git</code>
               </pre>
               <p>This will install the latest verision of Git.</p>
+              <h3>Linux/WSL Users - Step 1.0: Update the system</h3>
+              <p>Run these commands in the erminal to update the Linux system:<//p>
+      <pre>
+      <code>
+    sudo apt update
+    sudo apt upgrade
+      </code>
+      </pre>
+      <h3>Step 1.2: Install Git</h3>
+      <p>It is likely you have <code>git</code> installed already, but it's better to be safe than sorry and install it again, you won't lose any existing confirgurations by doing this</p>
+      <p>Run the following command</p>
+      <pre>
+      <code>
+    sudo apt install curl git
+      </code>
+      </pre>
             </section>
-      
+
       <section class="main-section" id="Step_2_Configure_Git_and_Github">
         <header>Step 2 Configure Git and Github</header>
         <h3>Step 2.1: Setup Git</h3>
@@ -226,8 +241,13 @@
               <li>Synchronise and changes we made</li>
               <li>Finally, add and commit those changes</li>
             </ul>
+            <p>If you haven't already give yourself a well deserved pat on the back! The journey has only just begun but you're now on your way to becoming a developer. I hope this content has helped you to gain a deeper understanding of Git, GitHub, and version control. </p>
           </section>
         </main> 
+<footer>
+  <h5>Hand coded by Jake Burton with 	♥</h5>
+  <p>Installation guide created by <a href="https://www.theodinproject.com/courses/web-development-101/lessons/setting-up-git" target="_blank">The Odin Project</a><br>Git and GitHub cheatsheet created by GitHub and can be found <a href="https://docs.github.com/en/github/getting-started-with-github/git-cheatsheet" target="_blank">here</a>.<p>
+</footer>
     </body>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </html>
